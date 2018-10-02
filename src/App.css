@@ -1,0 +1,607 @@
+/*-
+
+    Styling Structure!
+
+    Global Files
+        ** _reset
+        ** _variables
+        ** _reset_bootstraps // For Custom Classes
+
+
+    Project Files/ Page Layouts
+        ** Pages/ _Main
+
+        Project DOM
+            ** dom/_header.scss
+         
+            ** dom/_BottomNavBar.scss
+
+           Project (Card) Elements
+            Outer frame
+            ** /components/Cards/_Card_Frame.scss
+            Inner Frame
+            ** /components/Cards/_Card_Inner.scss
+
+                Inside Inner lies the card Elements
+                Card Type
+                ** /element/_Card_Typograhy.scss
+                Card Header
+                ** /element/_Card_Banner.scss
+                Card Content
+                ** /element/_Card_Content.scss
+                Card Bottom Bar
+                ** /element/_Card_BottomBar.scss
+
+                Side Specific
+                ** /_Card_Front.scss
+                ** /_Card_Back.scss
+
+
+            Flip Action
+            ** /components/Cards/_Card_Flip.scss
+            Bottom Bar
+            ** components/Cards/_Card_Bottom_Bar.scss
+            Media Components
+            ** /components/Cards/_Card_Media.scss
+
+ 
+    Global Elements
+        Buttons
+        ** components/Btns/_btns.scss
+
+-*/
+/*- Resets -*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul, li {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer; }
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none; }
+
+/*- SCCS Properties -*/
+@font-face {
+  font-display: swap;
+  font-family: "GH Guardian Headline";
+  font-weight: bold;
+  src: url("/fonts//GHGuardianHeadline-Bold.woff2") format("woff2"), url("/fonts//GHGuardianHeadline-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Guardian Headline Regular";
+  src: url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Bold";
+  src: url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Bold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Bold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-display: swap;
+  font-family: "TS3 Text Sans";
+  src: url("/fonts//TS3TextSans.woff2") format("woff2"), url("/fonts//TS3TextSans.woff") format("woff"); }
+
+@font-face {
+  font-display: swap;
+  font-family: "TS3 Text Sans";
+  font-weight: bold;
+  src: url("/fonts//TS3TextSans-Bold.woff2") format("woff2"), url("/fonts//TS3TextSans-Bold.woff") format("woff"); }
+
+/*- Typograpy  -*/
+html body {
+  font-family: "TS3 Text Sans";
+  background-color: #e2e2e2; }
+  html body .nopadding {
+    padding: 0; }
+  html body .nomargin {
+    margin: 0; }
+
+/*- Build up Dom Elements -*/
+#LoadingScreen {
+  height: 100vh;
+  width: 100vh;
+  background-color: #e2e2e2; }
+  #LoadingScreen .lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    width: 25%;
+    margin: 100px 50%; }
+  #LoadingScreen .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: #69D1CA;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite; }
+  #LoadingScreen .lds-facebook div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s; }
+  #LoadingScreen .lds-facebook div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s; }
+  #LoadingScreen .lds-facebook div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0; }
+
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px; }
+  50%, 100% {
+    top: 19px;
+    height: 26px; } }
+
+#Glabs {
+  background-color: #e2e2e2;
+  margin: 0%;
+  padding: 0%;
+  /* Smartphones (portrait and landscape) ----------- */
+  /* Large Phones ----------- */
+  /* Medium Phones ----------- */
+  /* Small Phones ----------- */
+  /* Smartphones (portrait) ----------- */
+  /* Smartphones (portrait and landscape) ----------- */
+  /* Large Phones ----------- */
+  /* Medium Phones ----------- */
+  /* Small Phones ----------- */
+  /* Smartphones (portrait) ----------- */
+  /* Smartphones (portrait and landscape) ----------- */
+  /* Large Phones ----------- */
+  /* Medium Phones ----------- */
+  /* Small Phones ----------- */
+  /* Smartphones (portrait) ----------- */
+  /*
+*       TABLET LARGE
+*
+*/
+  /* iPads Pro (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /*
+*       TABLET NORMAL
+*
+*/
+  /* iPads (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /*
+*       TABLET LARGE
+*
+*/
+  /* iPads Pro (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /*
+*       TABLET NORMAL
+*
+*/
+  /* iPads (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /*
+*       TABLET LARGE
+*
+*/
+  /* iPads Pro (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /*
+*       TABLET NORMAL
+*
+*/
+  /* iPads (landscape) ----------- */
+  /* iPads (portrait) ----------- */
+  /* Desktops and laptops ----------- */
+  /* Large screens ----------- */
+  /* Large screens ----------- */
+  /* Large screens ----------- */ }
+  #Glabs h1, #Glabs h2, #Glabs h3 {
+    font-family: "Guardian Headline Regular"; }
+  #Glabs p, #Glabs span, #Glabs a {
+    font-family: "TS3 Text Sans"; }
+  #Glabs #Header {
+    background-color: #e2e2e2;
+    margin: 0%;
+    padding: 0 0 10px 0px;
+    height: 60vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    align-items: start; }
+    #Glabs #Header .Title {
+      bottom: -12%;
+      width: auto;
+      padding: 1em;
+      margin: 0;
+      width: 100%;
+      position: absolute; }
+      #Glabs #Header .Title .Title-Fill-Color {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100%;
+        background-color: #21333A;
+        z-index: 0; }
+      #Glabs #Header .Title .Title-Container {
+        z-index: 10;
+        position: relative;
+        padding: 0; }
+        #Glabs #Header .Title .Title-Container h1 {
+          font-size: 3em;
+          font-weight: 100;
+          line-height: 1.2em;
+          margin: 0 0 0px;
+          color: #e2e2e2;
+          padding: 3px 14px;
+          font-family: "Guardian Headline Bold";
+          letter-spacing: 1px; }
+        #Glabs #Header .Title .Title-Container h1:nth-child(1) {
+          color: #73D1CA; }
+        #Glabs #Header .Title .Title-Container h2 {
+          font-size: 2em;
+          font-weight: 100;
+          line-height: 1.1em;
+          margin: 0 0 10px;
+          color: #21333A; }
+        #Glabs #Header .Title .Title-Container p {
+          font-size: 1.2em;
+          font-weight: 100;
+          line-height: 1.5em;
+          margin: 0 20% 10px 0;
+          display: none; }
+    #Glabs #Header .DarkBar {
+      background-color: rgba(0, 0, 0, 0.8);
+      height: max-content; }
+    #Glabs #Header #Sponsor {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      color: #e2e2e2; }
+      #Glabs #Header #Sponsor a {
+        color: #e2e2e2;
+        text-decoration: none;
+        line-height: 3.5em;
+        font-weight: 100; }
+      #Glabs #Header #Sponsor a:hover {
+        text-decoration: underline; }
+      #Glabs #Header #Sponsor span {
+        line-height: 3.5em;
+        float: right;
+        color: #e2e2e2; }
+      #Glabs #Header #Sponsor img {
+        width: 55px;
+        margin: 0 10px 0 10px;
+        float: right;
+        display: inline-block; }
+  #Glabs .BodyCopy {
+    color: #fefdf8;
+    background-color: transparent;
+    margin: 100px 0px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #9B9B9B; }
+    #Glabs .BodyCopy h1 {
+      font-size: 3em;
+      font-weight: 100;
+      line-height: 1.2em;
+      margin: 0 0 10px; }
+    #Glabs .BodyCopy h2 {
+      font-size: 3em;
+      font-weight: 100;
+      line-height: 1.2em;
+      margin: 0 0 10px; }
+    #Glabs .BodyCopy h3 {
+      font-size: 2em;
+      font-weight: 100;
+      line-height: 1.1em;
+      margin: 0 0 10px; }
+    #Glabs .BodyCopy p {
+      font-size: 1.2em;
+      font-weight: 100;
+      line-height: 1.5em;
+      margin: 0 0 10px;
+      width: 60%;
+      font-family: "Guardian Headline Regular";
+      letter-spacing: 1px; }
+      #Glabs .BodyCopy p a {
+        color: #69D1CA;
+        font-family: "Guardian Headline Regular"; }
+  #Glabs .BodyCopy.below {
+    border: unset; }
+    #Glabs .BodyCopy.below .container {
+      border-top: 1px solid #9B9B9B;
+      padding-top: 20px; }
+      #Glabs .BodyCopy.below .container p {
+        width: 100%; }
+  @media only screen and (min-width: 480px) and (max-width: 576px) {
+    #Glabs .BodyCopy p {
+      width: 100%;
+      padding: 15px 10px; } }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #Glabs .BodyCopy p {
+      width: 100%;
+      padding: 15px 10px; } }
+  @media only screen and (max-width: 320px) {
+    #Glabs .BodyCopy p {
+      width: 100%;
+      padding: 15px 10px; } }
+  #Glabs #ShareBar {
+    background-color: #69D1CA;
+    margin-top: 60px;
+    color: #21333A;
+    padding: .5em 2em; }
+    #Glabs #ShareBar h3 {
+      color: #21333A; }
+    #Glabs #ShareBar .ReadMore {
+      font-weight: 100;
+      transition: all .4s ease-in;
+      color: #21333A;
+      line-height: 1.3em;
+      display: inline-block;
+      margin: 8px 0; }
+      #Glabs #ShareBar .ReadMore strong {
+        font-weight: 800; }
+    #Glabs #ShareBar .ReadMore:hover {
+      text-decoration: none; }
+    #Glabs #ShareBar .chevron.right:before {
+      display: none;
+      left: 0;
+      transform: rotate(45deg); }
+    #Glabs #ShareBar .chevron.bottom:before {
+      top: 0;
+      transform: rotate(135deg); }
+    #Glabs #ShareBar .chevron.left:before {
+      left: 0.25em;
+      transform: rotate(-135deg); }
+    #Glabs #ShareBar .chevron::before {
+      border-style: solid;
+      border-width: 0.15em 0.15em 0 0;
+      content: '';
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: 1.1em;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.45em; }
+    #Glabs #ShareBar #ShareMe {
+      background-color: #69D1CA;
+      color: #21333A;
+      border-radius: 8px;
+      padding: 5px 10px;
+      border: 2px solid #21333A;
+      display: inline-block; }
+      #Glabs #ShareBar #ShareMe h3 {
+        font-size: 1em;
+        font-weight: 100;
+        display: inline-block;
+        line-height: 2em;
+        margin: 0 10px 0 0;
+        color: #21333A;
+        font-family: "TS3 Text Sans"; }
+      #Glabs #ShareBar #ShareMe ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        float: right; }
+        #Glabs #ShareBar #ShareMe ul li {
+          margin: 0 2px;
+          cursor: pointer; }
+          #Glabs #ShareBar #ShareMe ul li svg {
+            background-color: transparent !important; }
+            #Glabs #ShareBar #ShareMe ul li svg path {
+              fill: #21333A; }
+          #Glabs #ShareBar #ShareMe ul li circle, #Glabs #ShareBar #ShareMe ul li rect {
+            fill: #69D1CA; }
+  #Glabs #BottomBar {
+    display: none;
+    background-color: #69D1CA;
+    margin: 0%;
+    padding: 10px;
+    border-top: 3px solid #e2e2e2;
+    height: 70px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 99; }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    #Glabs #Header {
+      padding: 0; }
+      #Glabs #Header .Title .Title-Fill-Color {
+        width: 90%; }
+      #Glabs #Header .Title .Title-Container h1 {
+        font-size: 2em; }
+      #Glabs #Header .DarkBar {
+        background: black;
+        background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.393995) 50%, rgba(255, 255, 255, 0) 100%); } }
+  @media only screen and (min-width: 480px) and (max-width: 576px) {
+    #Glabs #Header {
+      padding: 0; }
+      #Glabs #Header .Title .Title-Container h1 {
+        font-size: 1.9em; }
+      #Glabs #Header .Title .Title-Fill-Color {
+        width: 90%; }
+      #Glabs #Header .DarkBar {
+        background: black;
+        background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.393995) 50%, rgba(255, 255, 255, 0) 100%); }
+      #Glabs #Header #Sponsor {
+        margin-bottom: 0px;
+        padding: 0;
+        border-bottom: unset; }
+        #Glabs #Header #Sponsor a {
+          line-height: 2.5em; }
+        #Glabs #Header #Sponsor span {
+          float: left;
+          line-height: 3em; }
+        #Glabs #Header #Sponsor img {
+          float: unset; }
+        #Glabs #Header #Sponsor .text-left {
+          border-bottom: 2px solid #80D1D6;
+          padding: 0 25px; }
+        #Glabs #Header #Sponsor .text-right {
+          text-align: left !important;
+          padding: 12px 25px 0; }
+      #Glabs #Header .container h1 {
+        font-size: 1.8em; } }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #Glabs #Header {
+      padding: 0; }
+      #Glabs #Header .Title .Title-Container h1 {
+        font-size: 1.8em; }
+      #Glabs #Header .Title .Title-Fill-Color {
+        width: 90%; }
+      #Glabs #Header .DarkBar {
+        background: black;
+        background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.393995) 50%, rgba(255, 255, 255, 0) 100%); }
+      #Glabs #Header #Sponsor {
+        margin-bottom: 0px;
+        padding: 0;
+        border-bottom: unset; }
+        #Glabs #Header #Sponsor a {
+          line-height: 2.5em; }
+        #Glabs #Header #Sponsor span {
+          float: left;
+          line-height: 3em; }
+        #Glabs #Header #Sponsor img {
+          float: unset; }
+        #Glabs #Header #Sponsor .text-left {
+          border-bottom: 2px solid #80D1D6;
+          padding: 0 25px; }
+        #Glabs #Header #Sponsor .text-right {
+          text-align: left !important;
+          padding: 12px 25px 0; } }
+  @media only screen and (max-width: 320px) {
+    #Glabs #Header .DarkBar {
+      background: black;
+      background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.393995) 50%, rgba(255, 255, 255, 0) 100%); }
+    #Glabs #Header .Title .Title-Container h1 {
+      font-size: 1.3em; }
+    #Glabs #Header .Title .Title-Fill-Color {
+      width: 90%; }
+    #Glabs #Header #Sponsor {
+      margin-bottom: 0px;
+      padding: 0;
+      border-bottom: unset; }
+      #Glabs #Header #Sponsor a {
+        line-height: 2.5em; }
+      #Glabs #Header #Sponsor span {
+        float: left;
+        line-height: 3em; }
+      #Glabs #Header #Sponsor img {
+        float: unset; }
+      #Glabs #Header #Sponsor .text-left {
+        border-bottom: 2px solid #80D1D6;
+        padding: 0; }
+      #Glabs #Header #Sponsor .text-right {
+        text-align: left !important;
+        padding: 12px 0px 0; } }
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    #Glabs #ShareBar {
+      margin-top: 30px; }
+      #Glabs #ShareBar .col-sm-12 {
+        text-align: center !important; }
+      #Glabs #ShareBar .ReadMore {
+        top: -15px;
+        position: relative; }
+      #Glabs #ShareBar #ShareMe {
+        position: relative;
+        top: -30px;
+        border: 1px solid #21333A; } }
+  @media only screen and (min-width: 480px) and (max-width: 576px) {
+    #Glabs #ShareBar {
+      margin-top: 30px; }
+      #Glabs #ShareBar .col-sm-12 {
+        text-align: center !important; }
+      #Glabs #ShareBar .ReadMore {
+        line-height: .5em;
+        top: -15px;
+        position: relative; }
+        #Glabs #ShareBar .ReadMore strong {
+          display: inline-block; }
+      #Glabs #ShareBar .chevron::before {
+        top: 0.55em; }
+      #Glabs #ShareBar #ShareMe {
+        position: relative;
+        top: -30px;
+        border: 1px solid #21333A; } }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    #Glabs #ShareBar {
+      margin-top: 30px; }
+      #Glabs #ShareBar .col-sm-12 {
+        text-align: center !important; }
+      #Glabs #ShareBar .ReadMore {
+        line-height: .5em;
+        top: -15px;
+        position: relative; }
+        #Glabs #ShareBar .ReadMore strong {
+          display: inline-block; }
+      #Glabs #ShareBar .chevron {
+        display: none; }
+      #Glabs #ShareBar #ShareMe {
+        position: relative;
+        top: -30px;
+        border: 1px solid #21333A; } }
+  @media only screen and (max-width: 320px) {
+    #Glabs #ShareBar {
+      margin-top: 30px; }
+      #Glabs #ShareBar .col-sm-12 {
+        text-align: center !important;
+        padding: 0; }
+      #Glabs #ShareBar .ReadMore {
+        line-height: .5em;
+        top: -15px;
+        position: relative; }
+        #Glabs #ShareBar .ReadMore strong {
+          display: inline-block; }
+      #Glabs #ShareBar .chevron {
+        display: none; }
+      #Glabs #ShareBar #ShareMe {
+        position: relative;
+        top: -30px;
+        border: 1px solid #21333A; } }
+  @media only screen and (min-width: 990px) and (max-width: 1024px) {
+    #Glabs {
+      /* Styles */ } }

@@ -1,0 +1,53 @@
+
+.Face{ 
+    padding: $Face_Padding;
+
+    .FaceOuter{
+        position: relative;
+        -webkit-border-radius: $FaceBorderRadius;
+        border-radius: $FaceBorderRadius;
+        -webkit-box-shadow: $FaceBoxShadow;
+        box-shadow: $FaceBoxShadow; 
+        border:$FaceBorder;
+    }
+    .FaceMedia{
+        height: $FaceHeight;
+        width: $FaceWidth;
+        position: relative;
+    }
+
+    .FaceAction{
+        background-color:$ActionBgColor;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+
+            h2{
+                
+            }
+
+            .CardCTA{
+                right: 0;
+                position: absolute;
+
+                .ActionButton{
+                    color:$buttonColor;
+             }
+            }
+
+    }
+}
+
+.ActiveFace{
+.FaceOuter{
+    border:1px solid $activeColor;
+}   
+.FaceAction{
+    background-color: $activeColor;
+}
+
+.count{
+    background-color: $activeColor;
+}
+}

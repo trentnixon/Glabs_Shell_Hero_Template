@@ -1,0 +1,72 @@
+.BodyCopy{
+
+    color:$SecondaryPColor;
+    @include BMP(transparent,100px 0px ,0 0 20px 0 ) ;
+    border-bottom: 1px solid #9B9B9B;
+
+    h1{ 
+        @include FONT($FontLargeSize,$FontLargeLine,$FontLargeWeight,0 0 10px) ; 
+    }
+
+    h2{  @include FONT($FontLargeSize,$FontLargeLine,$FontLargeWeight,0 0 10px) ; }
+
+    h3{ @include FONT($FontMedSize,$FontMedLine,$FontMedWeight,0 0 10px) ;}
+
+    p{ 
+            @include FONT($FontSmallSize,$FontSmallLine,$FontSmallWeight,0 0 10px) ;
+            width: 60%; 
+            font-family:  $FontFamilyHeader;
+            letter-spacing: 1px;
+
+            a{
+                color: $TertiaryColor;
+                font-family:  $FontFamilyHeader;
+            } 
+    }
+}
+
+.BodyCopy.below{
+
+        border:unset;
+     
+        .container{
+            border-top:1px solid #9B9B9B;
+            padding-top: 20px;
+            p{
+                width: 100%;   
+            }
+        }
+}
+
+
+
+@media only screen and  (max-width : 576px) {
+    .BodyCopy.below{
+        p{ }
+    }
+}
+
+@media only screen and (min-width : 480px) and (max-width : 576px) {
+    .BodyCopy{
+        p{
+            width: 100%;
+            padding: 15px 10px;
+        }
+    }
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .BodyCopy{
+        p{
+            width: 100%;
+            padding: 15px 10px;
+        }
+    }
+}
+@media only screen and (max-width : 320px) {
+    .BodyCopy{
+        p{
+            width: 100%;
+            padding: 15px 10px;
+        }
+    }
+}

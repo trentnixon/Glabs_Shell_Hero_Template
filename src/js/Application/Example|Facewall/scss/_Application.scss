@@ -1,0 +1,56 @@
+
+/************ 
+** Application Variables
+*************/
+
+
+// Wall
+$WallBgColor:$PrimaryColor;
+$WallMargin:0px;
+$WallPadding:5%;
+
+
+// Faces
+
+$Face_Padding:5px;
+$FaceHeight:300px;
+$FaceWidth:auto;
+$FaceBorderRadius:1px 1px 1px 1px;
+$FaceBoxShadow:0px 1px 5px 0px $SecondaryColor;
+$FaceBorder:1px solid $TertiaryColor;
+
+// Count Images
+$CountOffset:0;
+$countBgColor:$TertiaryColor;
+$countColor:$PrimaryHColor;
+$countTop:$CountOffset;
+$countRight:$CountOffset;
+$countBottom:unset;
+$countLeft:unset;
+
+
+// Actions
+$ActionBgColor:$TertiaryColor;
+$titleColor:$PrimaryHColor;
+$buttonColor:$PrimaryHColor;
+
+// Cards
+$BrowserOverlayBG:rgba(31, 106, 242, 0.3);
+$CardBgColor:rgba(255, 255, 255, 1);
+$CardOuterWidth:90%;
+$CardContentPadding:30px;
+
+$CardHColor:#000;
+$CardHSize:2em;
+
+// Stepper
+$StepperBgColor:$Quaternary;
+$ActiveDot:$PrimaryHColor;
+$NonActiveDot:rgba(31, 106, 242, 0.4);
+$buttonColor:$PrimaryHColor;
+// Active Card
+$activeColor:$Quaternary;
+
+@import "./_Cards";
+@import "./_Count";
+@import "./_Faces"

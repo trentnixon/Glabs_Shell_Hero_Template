@@ -1,0 +1,63 @@
+@at-root{
+html{
+    body{
+        .Card{
+            background-color: $BrowserOverlayBG;
+            >div{ 
+                width: $CardOuterWidth;
+                height:auto;
+                background-color: $CardBgColor;
+            }
+
+        .CardOuter{ 
+            position: relative;
+            margin:0;
+
+            .CardImage{
+                padding: 0;
+                img{ 
+                    max-width: 100%;
+                    max-height: 100%;
+                    height: auto;
+                    width: auto;
+                    margin-right: 10px;
+                }
+            }
+            .CardContent{
+                position: relative;
+                padding: $CardContentPadding;
+
+                h1{
+                    
+                }
+                p{
+                   
+                }
+            }
+
+            .Stepper{
+                padding:0;
+                background-color: $StepperBgColor;
+                width: 100%;
+            }
+
+           div[class^="MuiMobileStepper-dot-"], div[class*=" MuiMobileStepper-dot-"]{
+                background-color:$NonActiveDot;
+            }
+            div[class^="MuiMobileStepper-dotActive-"], div[class*=" MuiMobileStepper-dotActive-"]{
+                background-color:$ActiveDot;
+            }
+            button{
+                color: $buttonColor;
+            }
+        }
+
+
+        .CloseCard{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 9999;
+        }
+    }
+}}}

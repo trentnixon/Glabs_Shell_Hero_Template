@@ -1,0 +1,47 @@
+{
+ "data":"Json[LOAD] Completed",
+
+"Header":{
+    "Title":["Glabs Reacts","Atom Template"],
+    "HeaderBgImage":"assets/images/Header.jpg"
+},
+
+
+"BodyCopy":[
+    {
+         "type":"h2",
+         "copy":["Glabs H2"]
+    },{
+         "type":"h3",
+         "copy":["Glabs H3"]
+    },{
+         "type":"p",
+         "copy":["Glabs Paragraph"] },
+    {
+        "type":"p",
+        "copy":["Glabs Paragraph"] 
+    }
+ ],
+
+
+ "Client":{
+        "Copy":"Paid for by",
+        "Name":"Glabs",
+        "Logo":"Client-Logo.png",
+        "Url":"http://www.google.com"
+ },
+
+ "partnerZone":{
+        "HeaderCopy":"Glabs React - Atom Template Sub Header",
+        "FooterCopy":["Read more from our content series"," Glabs!"],
+        "Url":"http://www.google.com"
+    },
+
+ "ProjectSocial":{
+     "ShareUrl":null, 
+     "ShareHeader":"",
+     "ShareCopy":"",
+     "ShareImage":"",
+     "ShareThumb":""
+ }
+}
