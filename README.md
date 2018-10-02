@@ -3,10 +3,13 @@
 This is the Base shell for all Applications.
 
 ```
-###Clone Repo
+## Clone Repo
 
-###npm install 
+## npm install 
 
 ## npm start
+
 ```
 
+
+## npm run build to cerate production version
