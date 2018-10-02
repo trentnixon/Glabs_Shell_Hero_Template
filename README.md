@@ -1,1 +1,8 @@
-Create Read ME File.# Glabs_Shell_Hero_Template
+# Glabs Project Shell v5: Hero Image Version
+
+This is the Base shell for all Applications.
+
+```
+### Clone Repo
+
+```
