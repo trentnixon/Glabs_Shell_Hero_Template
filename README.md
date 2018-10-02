@@ -2,14 +2,19 @@
 
 This is the Base shell for all Applications.
 
-```
-## Clone Repo
 
-## npm install 
+Installations Instructions: 
 
-## npm start
+### Clone Repo
 
-```
+### npm install 
+
+### npm start
+
+How To Use:
 
 
-## npm run build to cerate production version
+
+Build Production:
+
+### npm run build to cerate production version
