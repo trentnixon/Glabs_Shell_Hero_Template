@@ -3,6 +3,10 @@
 This is the Base shell for all Applications.
 
 ```
-### Clone Repo
+###Clone Repo
 
+###npm install 
+
+## npm start
 ```
+
