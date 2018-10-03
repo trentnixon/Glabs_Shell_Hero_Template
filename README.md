@@ -35,19 +35,17 @@ Copy=”” : This attr slices the bodycopy object from the Data.json file.
 
 
 ```
-<BodyCopy   
-               Copy={this.props.UI.Data.BodyCopy.slice(0, 3)}
-           />
+<BodyCopy  Copy={this.props.UI.Data.BodyCopy.slice(0, 3)} />
 
 ```
 
 position=”” : This simply adds a class to the outer div for styling. For example
 
 ```
-<BodyCopy   
-                 Copy={this.props.UI.Data.BodyCopy.slice(3, 4)}
-                 position="below"
-             />
+<BodyCopy
+    Copy={this.props.UI.Data.BodyCopy.slice(3, 4)}
+    position="below"
+/>
 
 ```
 Will place a class of “below” on the containing Div under the application
@@ -55,6 +53,8 @@ Will place a class of “below” on the containing Div under the application
 
 
 Build Production:
-### npm run build to create production version.
+```
+npm run build to create production version.
+```
 
 
